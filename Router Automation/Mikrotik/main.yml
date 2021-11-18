@@ -1,0 +1,32 @@
+---
+- hosts: router
+  connection: network_cli
+  gather_facts: no 
+
+  # ok tasks digunakan untuk membuat tugas yang akan dilakukan oleh ansible nantinya
+  tasks:
+  - name: task 1
+    # routeros_command jenis modul ansible yang akan digunakan nantinya
+    routeros_command:
+      # commands masukan perintah yang akan di buat ansible ke dalam router nantinya
+      commands: /ip address add address=192.168.30.1/24 interface=ether2
+
+  - name: task 2
+    routeros_command:
+      commands: /ip address add address=192.168.20.1/24 interface=ether3
+
+  - name: task 3
+    routeros_command:
+      commands: /ip address add address=192.168.40.1/24 interface=ether4
+
+  - name: task 4
+    routeros_command:
+      commands: user add name=user2 group=full
+
+  - name: task 5
+    routeros_command:
+      commands: user add name=user3 group=full
+
+  - name: task 6
+    routeros_command:
+      commands: user add name=user4 group=full

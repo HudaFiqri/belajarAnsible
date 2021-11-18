@@ -1,0 +1,7 @@
+[router]
+
+# untuk bentuk penulisan host configure harus seperti ini
+10.10.1.7 ansible_user=cperoot ansible_network_os=routeros
+
+# ansible_user digunakan untuk authentikasi user saat login ssh
+# ansible_network_os jenis os apakah yang akan digunakan apakah ios ataukah routeros
